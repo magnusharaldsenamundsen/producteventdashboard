@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>Storebrand sales dashboard</title>
+ 
+		<link rel="stylesheet" href="https://elements.storebrand.no/storebrand.ny/0.85/css/stb-all.min.css">
+		<link rel="stylesheet" href="styles/style.css">
+	</head>
+ 
+  <body>
+
+	<header class="banner stbcolor-secondary first">
+		<h2>
+			<span class="stb-sprite-medium red pretzel left-margin-20 top-margin-10"></span>
+			Sales dashboard
+		</h2>
+	</header>
+
+	<section class="stbcolor-background fifth container-fluid body">
+		<section class="row top-margin-20">
+			<section class="col-md-12">
+
+				<productcard></productcard>
+
+				<section class="col-md-4">
+					<section class="panel panel-default">
+						<section class="panel-heading stbcolor-background sixth lead">
+							Fondskonto
+						</section>
+						<section class="panel-body text-center">
+							<h1>4</h1>
+						</section>
+						<section class="panel-footer">
+							Tilbud akseptert
+						</section>
+					</section>
+				</section>
+
+				<section class="col-md-4">
+					<section class="panel panel-default">
+						<section class="panel-heading stbcolor-background second lead">
+							<span class="text-white">PKB</span>
+						</section>
+						<section class="panel-body text-center">
+							<h1>4</h1>
+						</section>
+						<section class="panel-footer hidden">
+							Ny PKB flyttet
+						</section>
+					</section>
+				</section>
+
+			</section>
+		</section>
+	</section>
+
+	<footer class="stbcolor-background second text-right text-white">
+		<span class="muted right-margin-5">
+			<small>Made by</small> <strong>Q5W</strong>
+		</span>
+	</footer>
+
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>

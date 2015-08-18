@@ -1,0 +1,69 @@
+<productcard>
+  	<section class="col-md-4">
+		<section class="panel panel-default">
+
+				<section class="panel-heading stbcolor-background seventh lead">
+					{ model.product.productname }
+				</section>
+				<section class="panel-body text-center">
+					<h1>{ model.product.savings.periodicsavings }</h1>
+					<h1>{ model.product.savings.onetimepayments }</h1>
+					
+
+					<section class="row">
+						<section class="col-lg-4">
+							<section class="panel panel-default">
+								<section class="panel-heading">
+									Demand
+								</section>
+								<section class="panel-body">
+								 	{ model.event.demands }
+								</section>
+							</section>
+						</section>
+						<section class="col-lg-4">
+							<section class="panel panel-default">
+								<section class="panel-heading">
+									Offer
+								</section>
+								<section class="panel-body">
+								 	{ model.event.offers }
+								</section>
+							</section>
+						</section>
+						<section class="col-lg-4">
+							<section class="panel panel-default">
+								<section class="panel-heading">
+									Accept
+								</section>
+								<section class="panel-body">
+								 	{ model.event.accepts }
+								</section>
+							</section>
+						</section>
+					</section>
+
+				</section>
+				<section class="panel-footer">
+					<span>{ model.customer.gender } ({ model.customer.age }) { model.event.eventtype }</span>
+				</section>
+			
+		</section>
+	</section>
+
+	var self = this;
+	var model = {};
+
+	this.on( 'mount', function() {
+		var socket = io.connect( "http://localhost:3000" );
+		socket.on('productevent', function( data ){
+			console.log( "Received data. Updating", data );
+			self.update( { model: data } );	
+		});
+	});
+
+	addData = function( data ) {
+		self.update( { model: data } );
+	};
+
+</productcard>
